@@ -1,0 +1,14 @@
+#Python practice exercise 6: https://www.practicepython.org/exercise/2014/03/12/06-string-lists.html
+#Ask the user for a string and print out whether this string is a palindrome or not.
+#(A palindrome is a string that reads the same forwards and backwards.)
+
+#for reference--'palindrome : mom, dad, civic, rotor'
+
+w = input('Please enter a word: ')
+
+w_reverse = w[::-1]
+
+if w == w_reverse:
+    print(w, 'is a palindrome!')
+else:
+    print(w, 'is not a palindrome!')
