@@ -1,0 +1,37 @@
+'''python practice: https://www.practicepython.org/exercise/2014/04/02/09-guessing-game-one.html
+
+Generate a random number between 1 and 9 (including 1 and 9). Ask the user to guess the number, 
+then tell them whether they guessed too low, too high, or exactly right'''
+
+import random
+
+u_guess = ''
+
+num_guess = 0
+
+guess = random.randint(1,9)
+while True:
+    u_guess = int(input('Please enter a number between 1 and 9: '))
+
+    if u_guess == guess:
+        num_guess += 1
+        print("You guessed the number correctly!")
+        break
+    
+    elif u_guess > guess:
+        num_guess += 1
+        print("Your guess is too high")
+        another = input("Would you like to try again? Please respond with y for yes or e for exit: ")
+        if another == 'y':
+            continue
+            
+    elif u_guess < guess:
+        num_guess += 1
+        print("Your guess is too low")
+        another = input("Would you like to try again? Please respond with y for yes or e for exit: ")
+        if another == 'y':
+            continue
+            
+    print("Thank you for playing!") 
+    break
+print("You guessed",num_guess,"times!")
