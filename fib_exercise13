@@ -1,0 +1,22 @@
+source : https://www.practicepython.org/exercise/2014/04/30/13-fibonacci.html
+
+'''Write a program that asks the user how many Fibonnaci numbers to generate and then generates them. 
+Take this opportunity to think about how you can use functions. 
+Make sure to ask the user to enter the number of numbers in the sequence to generate.'''
+
+user_fib = int(input('Please provide a Fibonnaci number to generate a sequence: '))
+F = []
+def fib(seq):
+    for i in range(user_fib):
+        if i == 0:
+            n = 0
+            F.append(n)
+        
+        elif i ==1 or i ==2:
+            n = 1
+            F.append(n)
+        else:
+            n = F[i-2]+F[i-1]
+            F.append(n)
+    return F
+print(fib(user_fib))
