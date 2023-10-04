@@ -1,0 +1,21 @@
+source : https://www.practicepython.org/exercise/2014/05/15/14-list-remove-duplicates.html
+'''Write a program (function!) that takes a list and returns a new list that contains all the elements of the first 
+list minus all the duplicates.
+
+Extras:
+Write two different functions to do this - one using a loop and constructing a list, and another using sets.'''
+
+a = [1,1,2,3,1,7,8,9,7,12]
+b = []
+
+def remove(list_x):
+    for item in a:
+        if item not in b:
+            b.append(item)
+    return b
+print(remove(a))
+
+def set_remove(list_x):
+    c = set(a)
+    return c
+print(set_remove(a))
