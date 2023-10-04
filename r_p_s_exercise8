@@ -1,0 +1,56 @@
+'''python practice: https://www.practicepython.org/exercise/2014/03/26/08-rock-paper-scissors.html
+
+Make a two-player Rock-Paper-Scissors game. 
+(Hint: Ask for player plays (using input), compare them, print out a message of congratulations to the winner, 
+and ask if the players want to start a new game)'''
+
+user1 = ''
+user2 = ''
+
+choices = ['rock','paper','scissors']
+
+p1wins = 0
+p2wins = 0
+
+p1loss = 0
+p2loss = 0
+
+while True:
+    user1 = input('Player1 please enter a turn: ')
+    user2 = input('Player2 please enter a turn: ')
+    
+    if user1 not in choices and user2 in choices:
+        print("Player1, you did not enter a valid selection for the game, please try again")
+        continue
+    elif user2 not in choices and user1 in choices:
+        print("Player2, you did not enter a valid selection for the game, please try again")
+        continue
+    elif user1 and user2 not in choices:
+        print("You both entered invalid selections, please try again with the proper responses")
+        continue
+    
+    elif user1 == user2:
+        print('This round is a draw')
+        again = input('Would you like to break the tie? :')
+        if again == 'yes':
+            continue
+    
+    elif user1== 'rock' and user2 == 'scissors' or user1=='paper' and user2 == 'rock' or user1 == 'scissors' and user2 =='paper':
+        print('Player 1 is the winner of this round')
+        p1wins +=1
+        p2loss +=1
+        again = input('Would you like to play again? :')
+        if again == 'yes':
+            continue
+       
+    else:
+        print("Player 2 is the winner of this round")
+        p2wins +=1
+        p1loss +=1
+        again = input('Would you like to play again? :')
+        if again == 'yes':
+            continue
+        
+    print("Player1 wins:",p1wins,"\nPlayer1 losses:",p1loss,"\nPlayer2 wins:",p2wins,"\nPlayer2 losses:",p2loss)
+    
+    break
