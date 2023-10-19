@@ -1,0 +1,20 @@
+source: https://www.practicepython.org/exercise/2022/03/06/38-f-strings.html
+
+'''Implement the same exercise as Exercise 1 (Create a program that asks the user to enter their name and their age.
+Print out a message addressed to them that tells them the year that they will
+turn 100 years old), except use f-strings instead of the + operator to print the resulting output message.'''
+
+name = input('Please enter your name: ').title()
+
+age = int(input('Please enter your age: '))
+
+age_100 = 100-age
+
+curr_yr = 2023
+
+print(f'Hello {name}, you will be 100 in the year {curr_yr+age_100}')
+
+output:
+Please enter your name: dior
+Please enter your age: 33
+Hello Dior, you will be 100 in the year 2090
