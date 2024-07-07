@@ -9,8 +9,8 @@ import datetime
 
 current = datetime.datetime.now()
 #print(current)
-year = current.year
-#print(year)
+year = current.year 
+#print(year) #2023
 #print(current.strftime("%B"))
 
 name = input('Please enter your name: ').title()
