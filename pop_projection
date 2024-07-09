@@ -1,0 +1,35 @@
+'''(Population projection) Python Question
+The US Census Bureau projects population based on the following 
+assumptions: 
+One birth every 7 seconds 
+One death every 13 seconds 
+One new immigrant every 45 seconds 
+Write a program to display the population for each of the next five years. 
+Assume the current population is 312032486 and one year has 365 days.'''
+
+'''Step 1 shows an easy-to-read example of what is actually going on--translating the ratios into minute, hour, daily, 
+and ultimately yearly figures and then showing the yearly change over the course of 5 years.'''
+
+def pop(n):
+one_min = 60/n -- n represents the number of seconds that either a birth, death, or immigration occurs
+hour = one_min * 60
+day = hour * 24
+year = round(day * 365)
+return year
+
+births = pop(7) #1 in 7 seconds
+death = pop(13) #1 in 13 seconds
+immigrant =pop(45) #1 in 45 seconds
+current_pop = 312032486
+for i in range(5):
+current_pop += births - death + immigrant
+print(current_pop) #325932971
+
+Step 2 is a more seamless version of Step 1:
+demo = lambda n: round((60/n) * 60 *24 *365)
+a = demo(7) #births
+b = demo(13) #deaths
+c = demo(45) #immigrants
+for i in range(5):
+current_pop += a - b + c
+print(current_pop) #325932971
